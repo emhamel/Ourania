@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:id="@+id/Ourania_title"
+        android:layout_width="355dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="41dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:fontFamily="@font/primeregular"
+        android:text="@string/ourania"
+        android:textColor="#ffffff"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/Upload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/Upload"
+        android:layout_width="328dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="389dp"
+        android:alpha="0.8"
+        android:background="#000000"
+        android:fontFamily="@font/primelight"
+        android:text="Upload"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Ourania_title" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="323dp"
+        android:layout_height="72dp"
+        android:alpha="0.8"
+        android:background="#000000"
+        android:fontFamily="@font/primelight"
+        android:text="Take Photo"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Upload" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="319dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="168dp"
+        android:alpha="0.8"
+        android:background="#000000"
+        android:fontFamily="@font/primelight"
+        android:text="Saved Photos"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
