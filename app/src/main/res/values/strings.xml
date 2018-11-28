@@ -3,4 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="ourania">Ourania</string>
     <string name="textview">TextView</string>
+    <string name="uploadphoto">Upload Photo</string>
+    <string name="takephoto">Take Photo</string>
+    <string name="savedphotos">Saved Photos</string>
+    <string name="title_activity_upload_photo">uploadPhoto</string>
 </resources>

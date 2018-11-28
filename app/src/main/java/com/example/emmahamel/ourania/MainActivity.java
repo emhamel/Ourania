@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,5 +38,17 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void photoLibrary(final View view) {
+        Intent i = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        final int ACTIVITY_SELECT_IMAGE = 1234;
+        startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
+    }
+
+    public void camera(final View view) {
+        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+        startActivity(intent);
     }
 }
