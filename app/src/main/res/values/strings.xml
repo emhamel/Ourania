@@ -7,4 +7,16 @@
     <string name="takephoto">Take Photo</string>
     <string name="savedphotos">Saved Photos</string>
     <string name="title_activity_upload_photo">uploadPhoto</string>
+    <string name="title_activity_loading">Loading</string>
+    <string name="title_activity_explorescreen">Explore Mode</string>
+    <string name="instructions">Tap on a star</string>
+    <string name="next"> Next </string>
+    <string name="results"> Results </string>
+    <string name="setResults"> .. </string>
+    <string name="Stats"> Stats </string>
+    <string name="title_activity_final_results">final_results</string>
+    <string name="x">x</string>
+    <string name="title_activity_whole_results">whole_results</string>
+    <string name="error">Error</string>
+    <string name="error_message">Please input a valid image</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.emmahamel.ourania;
 
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -8,10 +10,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.provider.MediaStore;
+import android.net.Uri;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
+    private static final int CAMERA_PIC_REQUEST = 1337;
+    private static final int PICK_IMAGE = 17;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void photoLibrary(final View view) {
-        Intent i = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        final int ACTIVITY_SELECT_IMAGE = 1234;
-        startActivityForResult(i, ACTIVITY_SELECT_IMAGE);
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI );
+        //i.setType("image/*");
+        startActivityForResult(i, PICK_IMAGE);
     }
 
     public void camera(final View view) {
@@ -52,4 +59,36 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
         }
     }
+
+    public void saved(final View view) {
+        System.out.println("hey");
+    }
+
+    public void switchToLoadingScreen(View view) {
+        Intent intent = new Intent(view.getContext(), explorescreen.class);
+        startActivity(intent);
+    }
+
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Uri image = null;
+        if (resultCode == RESULT_OK) {
+            if (requestCode == CAMERA_PIC_REQUEST && data.hasExtra("data")) {
+                final Uri uri = data.getData();
+                image = uri;
+            }
+            if (requestCode == PICK_IMAGE && data != null) {
+                final Uri uri = data.getData();
+                image = uri;
+            }
+
+            if (image != null) {
+                Intent intent = new Intent(this, explorescreen.class);
+                intent.putExtra("UriImage", image);
+                startActivity(intent);
+            }
+        }
+    }
+
 }

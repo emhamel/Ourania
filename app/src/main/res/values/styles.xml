@@ -17,4 +17,12 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="Ourania" parent="AppTheme">
+        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:textColorSecondaryInverse">#FFFFFF</item>
+        <item name="android:colorForeground">#FFFFFF</item>
+        <item name="android:fontFamily">@font/primeregular</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>
